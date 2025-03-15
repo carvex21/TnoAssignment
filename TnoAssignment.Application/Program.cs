@@ -8,7 +8,14 @@
 
             var radarData = Radar.LoadRadarData("data/radar_data.csv");
 
-            for (var time = 0; time < radarData.Count; time++)
+            var duration = radarData.Count;
+
+            if (duration > 20)
+            {
+                duration = 20;
+            }
+
+            for (var time = 0; time < duration; time++)
             {
                 Console.WriteLine($"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[Time: {time + 1}s]~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
